@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Eggspro</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="logo">
+                <img src="https://th.bing.com/th/id/OIP.HDVS1Km5rDwq1il_D4ArfwHaFL?w=210&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Eggspro Logo">
+                <h1>Eggspro</h1>
+            </div>
+            
+            <h2>Sign up</h2>
+            <p>Let's get you all set up so you can access your personal account.</p><br>
+            
+            <form id="signupForm" action="/signup" method="POST">
+                <div class="form-group">
+                    <input type="text" id="username" name="username" placeholder="your name" required>
+                    <label for="username">User Name</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="your email" required>
+                    <label for="email">Email</label>
+                </div>
+                
+                <div class="form-group">
+                    <div class="password-input">
+                        <input type="password" id="password" name="password" placeholder="password" required>
+                        <label for="password">Password</label>
+                        <button type="button" class="toggle-password">
+                            <i class="eye-icon"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="password-input">
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="confirm password" required>
+                        <label for="confirmPassword">Confirm Password</label>
+                        <button type="button" class="toggle-password">
+                            <i class="eye-icon"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="remember">
+                        <span class="checkmark"></span>
+                        I agree to all the Terms and Privacy Policies
+                    </label>
+                </div>
+                 <br><br>
+                <div class="form-group">
+                    <button type="submit" class="btn-primary">Create account</button>
+                </div>
+                
+            </form>
+            
+            <p class="login-link">
+                Already have an account? <a href="/login">Login</a>
+            </p>
+        </div>
+        <div class="image-container">
+            <div class="image-display">
+                <img src="2.png" alt="Security Illustration" id="displayedImage">
+            </div>
+            <div class="image-selector">
+                <input type="radio" id="image1" name="image-select" value="2.png" checked>
+                <label for="image1"></label>
+                
+                <input type="radio" id="image2" name="image-select" value="https://th.bing.com/th/id/OIP.vxH3QLu7JSNbqdbT2VjZRwHaHa?w=200&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7">
+                <label for="image2"></label>
+                
+                <input type="radio" id="image3" name="image-select" value="https://static.vecteezy.com/system/resources/thumbnails/017/266/185/small_2x/login-form-page-template-with-phone-for-app-development-smartphone-mockups-website-ui-elements-online-login-form-registration-user-profile-access-to-account-10-eps-vector.jpg">
+                <label for="image3"></label>
+            </div>
+        </div>
+    </div>
+    <script src="/js/validation.js"></script>
+    <script src="/js/imageSelector.js"></script>
+</body>
+</html>
+
