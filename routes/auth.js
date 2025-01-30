@@ -1,6 +1,7 @@
 const express = require('express');
 const { body, validationResult } = require('express-validator');
 const User = require('../models/User');
+const Product = require('../models/Product'); // Import the Product model
 const bcrypt = require('bcryptjs');
 
 const router = express.Router();
@@ -15,8 +16,14 @@ router.get('/signup', (req, res) => {
 router.get('/login', (req, res) => {
   res.render('login');
 });
-router.get("/dashboard",(req,res)=>{
-    res.send("Welcome to dashboard");
+router.get("/dashboard",async(req,res)=>{
+  try {
+    const products = await Product.find(); // Fetch products from DB
+    res.render("dashboard", { products }); // Pass products to EJS
+} catch (err) {
+    console.error("Error fetching products:", err);
+    res.status(500).send("Internal Server Error");
+}
 })
 
 router.post('/signup', [
@@ -61,6 +68,7 @@ router.post('/login', async (req, res) => {
     }
 
     res.redirect('/dashboard');
+    
   } catch (error) {
     res.status(500).json({ error: 'Error logging in' });
   }

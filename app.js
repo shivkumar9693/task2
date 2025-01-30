@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const authRoutes = require('./routes/auth');
+const productRoutes = require("./routes/productRoutes");
 require('dotenv').config();
 
 const app = express();
@@ -25,6 +26,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Routes
 app.use('/', authRoutes);
+app.use("/", productRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
